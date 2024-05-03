@@ -1,0 +1,67 @@
+.grid-item {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    z-index: 0;
+    filter: blur(0.5px);
+}
+
+p {
+    font-weight: bold;
+    text-wrap: wrap;
+    width: 1rem;
+    font-size: 1.2rem;    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-shadow: 0 0 10px #00000056, 0 0 20px #ffffff00;
+    &:hover {
+        font-size: 1.3rem;
+    }
+}
+
+.container-child {
+    display: grid;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 40%, rgba(8, 101, 77, 1) 85%, rgba(5, 204, 153, 1) 88.95%, rgba(246, 250, 249, 1) 89%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 1) 100%);
+    background-size: 1000% 1000%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: change-grad 20s ease infinite;
+    -moz-animation: change-grad 20s ease infinite;
+    animation: change-grad 20s ease infinite;
+}
+
+@-webkit-keyframes change-grad {
+    100% {
+        background-position: 100% 0%
+    }
+
+    0% {
+        background-position: 0% 100%
+    }
+}
+
+@-moz-keyframes change-grad {
+    100% {
+        background-position: 100% 0%
+    }
+
+    0% {
+        background-position: 0% 100%
+    }
+}
+
+@keyframes change-grad {
+    100% {
+        background-position: 100% 0%
+    }
+
+    0% {
+        background-position: 0% 100%
+    }
+}

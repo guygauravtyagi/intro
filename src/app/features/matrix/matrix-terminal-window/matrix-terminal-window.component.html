@@ -1,0 +1,21 @@
+<div *ngIf="showDialogBox" class=" conatiner-abs container">
+    <ng-container>
+        <div class="terminal">
+            <nav class="terminal-nav">
+                <div class="nav-title">
+                    <label for="">
+                        Welcome
+                    </label>
+                </div>
+                <div class="nav-close">
+                    <button (click)="close()">X</button>
+                </div>
+            </nav>
+            <section *ngIf="typeThis$ | async as typeThis">
+                <div [innerHTML]="typeThis">
+
+                </div>
+            </section>
+        </div>
+    </ng-container>
+</div>

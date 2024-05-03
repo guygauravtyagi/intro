@@ -1,0 +1,9 @@
+<div class="conatiner-abs container" [style]="iteration">
+    <ng-container *ngFor="let val of splitIn">
+        <div class="grid-item" >
+            <p class="container-child" [style]="val.delay" >
+                {{val.innerArr}}
+            </p>
+        </div>
+    </ng-container>
+</div>
