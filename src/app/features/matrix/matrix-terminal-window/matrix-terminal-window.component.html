@@ -1,6 +1,6 @@
-<div *ngIf="showDialogBox" class=" conatiner-abs container">
+<div class=" conatiner-abs container">
     <ng-container>
-        <div class="terminal">
+        <div class="terminal" *ngIf="showDialogBox">
             <nav class="terminal-nav">
                 <div class="nav-title">
                     <label for="">
@@ -11,8 +11,8 @@
                     <button (click)="close()">X</button>
                 </div>
             </nav>
-            <section *ngIf="typeThis$ | async as typeThis">
-                <div [innerHTML]="typeThis">
+            <section id="scroller" *ngIf="typeThis$ | async as typeThis">
+                <div #inner [innerHTML]="typeThis">
 
                 </div>
             </section>

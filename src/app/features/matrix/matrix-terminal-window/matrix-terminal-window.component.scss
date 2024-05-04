@@ -4,12 +4,14 @@
     align-items: center;
     background-color: #00000025;
     z-index: 1;
+    overflow: hidden;
 
     .terminal {
         height: 60vh;
         width: 60vw;
         border: 3px ridge gray;
         background-color: black;
+        overflow: hidden;
 
         .terminal-nav {
             box-sizing: border-box;
@@ -20,10 +22,6 @@
             justify-content: space-between;
             align-items: center;
             background-color: #08654d;
-
-            .nav-title {
-                label {}
-            }
 
             .nav-close {
                 height: 26px;
@@ -51,29 +49,35 @@
 
     section {
         padding: 10px;
+        height: calc(60vh - 50px);
+        overflow:scroll;
+        overflow-x:hidden;
 
-        p,
-        input {
-            color: #FFFFFF;
-            text-shadow: 0 0 3px #FFF, 0 0 6px #49ff18;
+        div {
 
-            &:before {
-                content: "> ";
+            p,
+            input {
                 color: #FFFFFF;
                 text-shadow: 0 0 3px #FFF, 0 0 6px #49ff18;
-                font-weight: bold;
-            }
-
-            &.blinker {
-                &:after {
-                    content: " _";
-                    font-weight: bold;
+    
+                &:before {
+                    content: "> ";
                     color: #FFFFFF;
                     text-shadow: 0 0 3px #FFF, 0 0 6px #49ff18;
-                    animation: blink 200ms linear infinite;
+                    font-weight: bold;
+                }
+    
+                &.blinker {
+                    &:after {
+                        content: " _";
+                        font-weight: bold;
+                        color: #FFFFFF;
+                        animation: blink 200ms linear infinite;
+                    }
                 }
             }
         }
+
     }
 }
 

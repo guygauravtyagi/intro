@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, Input, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Inject, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { FloatButtonComponent } from '../../../shared/components/float-button/float-button.component';
 
@@ -8,7 +8,7 @@ import { FloatButtonComponent } from '../../../shared/components/float-button/fl
   standalone: true,
   imports: [
     CommonModule,
-    FloatButtonComponent,
+    FloatButtonComponent
   ],
   templateUrl: './matrix-terminal-window.component.html',
   styleUrl: './matrix-terminal-window.component.scss',
@@ -36,13 +36,17 @@ export class MatrixTerminalWindowComponent {
     'what were you expecting?'
   ]
   messaegIndex = 0;
+  @ViewChild('inner', { static: false }) inner: ElementRef | undefined;
   private tempHolder = '';
 
   @Input() showDialogBox = true;
   private _typeThis = new BehaviorSubject('');
   protected typeThis$ = this._typeThis.asObservable();
 
-  constructor(private el: ElementRef, private cdr: ChangeDetectorRef) { }
+  constructor(
+    private el: ElementRef,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
     this.createPara();
@@ -60,6 +64,7 @@ export class MatrixTerminalWindowComponent {
   createPara(str?: string) {
     this.el.nativeElement.querySelector("p")?.classList.remove('blinker');
     this.updateTyping(this.messageArray[this.messaegIndex]);
+    document?.getElementById('scroller')?.scrollHeight;
     if (str)
       this.tempHolder += JSON.parse(JSON.stringify(`<p>${str}</p>`));
   }
