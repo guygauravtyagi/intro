@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
 import { MatrixBackgroundComponent } from '../../features/matrix/matrix-background/matrix-background.component';
 import { MatrixTerminalWindowComponent } from '../../features/matrix/matrix-terminal-window/matrix-terminal-window.component';
 import { MatrixTitleIntroComponent } from '../../features/matrix/matrix-title-intro/matrix-title-intro.component';
@@ -12,7 +11,6 @@ import { MatrixTitleIntroComponent } from '../../features/matrix/matrix-title-in
   styleUrl: './matrix-page.component.scss',
   imports: [
     CommonModule,
-    MatIconModule,
     MatrixTitleIntroComponent,
     MatrixBackgroundComponent,
     MatrixTerminalWindowComponent,

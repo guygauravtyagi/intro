@@ -18,7 +18,7 @@ export class MatrixTerminalWindowComponent {
 
   messageArray = [
     'Hello Neo',
-    'Since you been looking for a good UI developer?',
+    'I know you been looking for a good UI developer.',
     "But you are in a matrix Neo, that is why you can't find one.",
     'So I took you out of matrix, to show you the truth.',
     'My name is Gaurav Tyagi.',
