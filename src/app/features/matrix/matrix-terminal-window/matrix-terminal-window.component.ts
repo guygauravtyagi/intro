@@ -1,26 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, ElementRef, Input, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { FloatButtonComponent } from '../../../shared/components/float-button/float-button.component';
 
 @Component({
   selector: 'gt-matrix-terminal-window',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    FloatButtonComponent,
+  ],
   templateUrl: './matrix-terminal-window.component.html',
   styleUrl: './matrix-terminal-window.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
 export class MatrixTerminalWindowComponent {
 
-  private messageArray = [
-    'Hello Mr. Anderson.',
-    'I have very less time.',
-    'So I will keep this short',
+  messageArray = [
+    'Hello Neo',
+    'Since you been looking for a good UI developer?',
+    "But you are in a matrix Neo, that is why you can't find one.",
+    'So I took you out of matrix, to show you the truth.',
     'My name is Gaurav Tyagi.',
-    'I am a UI developer and movie buff.',
+    'I am a UI developer and a movie buff.',
     'I have worked on multiple domains like Banking, e-comerece etc.',
-    'I know Angular, Spartacus, TypeScript, Reactjs, Nextjs, Nodejs',
-    'So if you want to contact me enter y',
+    'I know Angular, Spartacus, TypeScript, Reactjs, Nextjs, Nodejs.',
+    'So if you want to contact me follow the white rabbit.',
   ];
   private onClose = [
     'Hey',
@@ -30,7 +35,7 @@ export class MatrixTerminalWindowComponent {
     'Go on close again',
     'what were you expecting?'
   ]
-  private messaegIndex = 0;
+  messaegIndex = 0;
   private tempHolder = '';
 
   @Input() showDialogBox = true;
@@ -57,15 +62,6 @@ export class MatrixTerminalWindowComponent {
     this.updateTyping(this.messageArray[this.messaegIndex]);
     if (str)
       this.tempHolder += JSON.parse(JSON.stringify(`<p>${str}</p>`));
-    this.createInput();
-  }
-
-  createInput() {
-    this._typeThis.next(`
-      ${this.tempHolder}
-      <input class="blinker" type="text">
-      `);
-      this.cdr.detectChanges();
   }
 
   updateTyping(str: string) {
@@ -85,6 +81,6 @@ export class MatrixTerminalWindowComponent {
         clearInterval(interval);
       };
       count--;
-    }, 200);
+    }, 100);
   }
 }

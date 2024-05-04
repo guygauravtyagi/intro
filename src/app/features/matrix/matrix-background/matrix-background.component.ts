@@ -15,7 +15,7 @@ export class MatrixBackgroundComponent implements OnInit {
     delay: string;
   }[] = [];
   @Input() columns: number = 100;
-  @Input() rows: number = 40;
+  @Input() rows: number = 60;
   @Input() animationDelay: number = 20;
   @Input() charArr: string = 'ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ日ｦｲｸｺｿﾁﾄﾉﾌﾔﾖﾙﾚﾛﾝ012345789:・."=*+-<>';
   iteration: string = '';  

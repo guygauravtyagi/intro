@@ -5,3 +5,30 @@
     top: 0;
     left: 0;
 }
+
+.button-holder {
+    position: absolute;
+    //background-color: white;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 4vh;
+    bottom: 10px;
+    right: 10px;
+    animation: show 5s;
+
+    img {
+        height: 9vh;
+        width: 9vh;
+        object-fit: cover;
+    }
+}
+
+@keyframes show {
+    from {
+        right: -100px;
+    }
+
+    to {
+        right: 10px;
+    }
+}

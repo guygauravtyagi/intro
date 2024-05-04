@@ -23,7 +23,7 @@ export class MatrixTitleIntroComponent {
 
   protected isVisible = true;
   @Input() blinker = 2000;
-  @Input() delay: number = 4;
+  @Input() delay: number = 6;
   @Output() deploy: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private cdr: ChangeDetectorRef) {

@@ -1,3 +1,5 @@
+@import './../../../../assets/styles/_root.scss';
+
 .container {
     display: flex;
     justify-content: center;
@@ -8,31 +10,341 @@
 
     div {
         text-align: center;
-        background-color: black;
         height: 110vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background: $black-color url("./../../../../assets/images/matrix-intro.jpg") no-repeat right top;
+        background-size: cover;
+        width: 100vw;
+        background-color: rgba(8, 53, 17, 0.75);
+        background-blend-mode: multiply;
+        font-family: 'Times New Roman', serif;
+        text-transform: uppercase;
+
         h1 {
-            letter-spacing: 2rem;
-            font-size: 3rem;
-            text-transform: uppercase;
-            text-shadow: -24px 0px 4px #257736;
-        }
-        h3 {
             letter-spacing: 1rem;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            text-shadow: -12px 0px 4px #257736;
-            line-height: 4.5rem;
+            font-size: 5rem;
+            animation: glitch 2500ms infinite 6s;
+            margin: 0;
+            line-height: 0;
         }
+
+        h1:nth-child(2) {
+          color: #67f3da;   
+          animation: glitch-green 2500ms infinite 6s;
+        }
+        
+        h1:nth-child(3) {
+          color: #f16f6f;
+          animation: glitch-red 2500ms infinite 6s;
+        }
+
+        h3 {
+            letter-spacing: .75rem;
+            font-size: 2.25rem;
+            line-height: 7.5rem;
+        }
+
         h5 {
-            letter-spacing: 0.6rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            text-shadow: -8px 0px 4px #257736;
-            line-height: 2.5rem;
+            letter-spacing: 0.8rem;
+            font-size: 1.5rem;
+            line-height: 8.5rem;
         }
+
+        @include for_breakpoint(small-mobile) {
+
+            h1 {
+                letter-spacing: .3rem;
+                font-size: 2rem;
+            }
+
+            h3 {
+                letter-spacing: .12rem;
+                font-size: 1.25rem;
+            }
+    
+            h5 {
+                letter-spacing: 0.1rem;
+                font-size: 1rem;
+            }
+        }
+
+        @include for_breakpoint(mobile) {
+
+            h1 {
+                letter-spacing: .4rem;
+                font-size: 3rem;
+            }
+
+            h3 {
+                letter-spacing: .16rem;
+                font-size: 1.75rem;
+            }
+    
+            h5 {
+                letter-spacing: 0.2rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        @include for_breakpoint(tablet) {
+
+            h1 {
+                letter-spacing: .6rem;
+                font-size: 4rem;
+            }
+
+            h3 {
+                letter-spacing: .5rem;
+                font-size: 2rem;
+            }
+    
+            h5 {
+                letter-spacing: 1rem;
+                font-size: 1.75rem;
+            }
+        }
+    }
+}
+
+@keyframes glitch {
+    0% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    7% {
+        font-family: 'matrix';
+        transform: skew(-0.5deg, -0.9deg);
+        opacity: 0.85;
+    }
+
+    10% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    27% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    30% {
+        font-family: 'matrix';
+        transform: skew(0.8deg, -0.1deg);
+        opacity: 0.85;
+    }
+
+    35% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    52% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    55% {
+        font-family: 'matrix';
+        transform: skew(-1deg, 0.2deg);
+        opacity: 0.85;
+    }
+
+    50% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    72% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    75% {
+        font-family: 'matrix';
+        transform: skew(0.4deg, 1deg);
+        opacity: 0.85;
+    }
+
+    80% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+
+    100% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes glitch-green {
+    0% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    7% {
+        font-family: 'matrix';
+        transform: translate(-2px, -3px);
+        opacity: 0.6;
+    }
+
+    10% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    27% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    30% {
+        font-family: 'matrix';
+        transform: translate(-5px, -2px);
+        opacity: 0.6;
+    }
+
+    35% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    52% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    55% {
+        font-family: 'matrix';
+        transform: translate(-5px, -1px);
+        opacity: 0.6;
+    }
+
+    50% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    72% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    75% {
+        font-family: 'matrix';
+        transform: translate(-2px, -6px);
+        opacity: 0.6;
+    }
+
+    80% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    100% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+}
+
+@keyframes glitch-red {
+    0% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    7% {
+        font-family: 'matrix';
+        transform: translate(2px, 3px);
+        opacity: 0.6;
+    }
+
+    10% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    27% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    30% {
+        font-family: 'matrix';
+        transform: translate(5px, 2px);
+        opacity: 0.6;
+    }
+
+    35% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    52% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    55% {
+        font-family: 'matrix';
+        transform: translate(5px, 1px);
+        opacity: 0.6;
+    }
+
+    50% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    72% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    75% {
+        font-family: 'matrix';
+        transform: translate(2px, 6px);
+        opacity: 0.6;
+    }
+
+    80% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
+    }
+
+    100% {
+        font-family: 'Times New Roman', serif;
+        transform: none;
+        opacity: 0.35;
     }
 }
