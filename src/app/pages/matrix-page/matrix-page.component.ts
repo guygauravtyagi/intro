@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatrixBackgroundComponent } from '../../features/matrix/matrix-background/matrix-background.component';
 import { MatrixTerminalWindowComponent } from '../../features/matrix/matrix-terminal-window/matrix-terminal-window.component';
@@ -14,7 +14,8 @@ import { MatrixTitleIntroComponent } from '../../features/matrix/matrix-title-in
     MatrixTitleIntroComponent,
     MatrixBackgroundComponent,
     MatrixTerminalWindowComponent,
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatrixPageComponent {
 

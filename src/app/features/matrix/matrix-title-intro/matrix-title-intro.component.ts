@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, afterNextRender } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, afterNextRender } from '@angular/core';
 
 @Component({
   selector: 'gt-matrix-title-intro',
@@ -17,7 +17,8 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, afte
         visibility: 'hidden'
       }))
     ])
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatrixTitleIntroComponent {
 
