@@ -11,9 +11,15 @@
                     <button (click)="close()">X</button>
                 </div>
             </nav>
-            <section id="scroller" *ngIf="typeThis$ | async as typeThis">
-                <div #inner [innerHTML]="typeThis">
-
+            <section id="scroller">
+                <div>
+                    <ng-container *ngIf="createdPValue$ | async as pValue">
+                        <p *ngFor="let item of pValue">{{item}}</p>
+                    </ng-container>
+                    <ng-container *ngIf="typeThis$ | async as typeThis">
+                        <p [innerHTML]="typeThis"></p>
+                    </ng-container>
+                    <p #message style="visibility: hidden;">Don't show</p>
                 </div>
             </section>
         </div>

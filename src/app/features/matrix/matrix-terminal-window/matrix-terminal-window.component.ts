@@ -18,7 +18,7 @@ export class MatrixTerminalWindowComponent {
 
   messageArray = [
     'Hello Neo',
-    'I know you been looking for a good UI developer.',
+    'I know you have been looking for a good UI developer.',
     "But you are in a matrix Neo, that is why you can't find one.",
     'So I took you out of matrix, to show you the truth.',
     'My name is Gaurav Tyagi.',
@@ -36,12 +36,14 @@ export class MatrixTerminalWindowComponent {
     'what were you expecting?'
   ]
   messaegIndex = 0;
-  @ViewChild('inner', { static: false }) inner: ElementRef | undefined;
-  private tempHolder = '';
+  @ViewChild('message', { static: false }) messageRef: ElementRef | undefined;
+  private tempHolder: string[] = [];
 
   @Input() showDialogBox = true;
   private _typeThis = new BehaviorSubject('');
   protected typeThis$ = this._typeThis.asObservable();
+  private _createdPValue = new BehaviorSubject<string[]>([]);
+  protected createdPValue$ = this._createdPValue.asObservable();
 
   constructor(
     private el: ElementRef,
@@ -49,34 +51,35 @@ export class MatrixTerminalWindowComponent {
   ) { }
 
   ngOnInit(): void {
+    this.tempHolder.length = 0;
     this.createPara();
   }
 
-  close() {
-    this.showDialogBox = false;
-    this.cdr.detectChanges();
-    setTimeout(() => {
-      this.showDialogBox = true;
-      this.cdr.detectChanges();
-    }, Math.random() * 5000)
-  }
+  close() {  }
 
   createPara(str?: string) {
     this.el.nativeElement.querySelector("p")?.classList.remove('blinker');
     this.updateTyping(this.messageArray[this.messaegIndex]);
-    document?.getElementById('scroller')?.scrollHeight;
-    if (str)
-      this.tempHolder += JSON.parse(JSON.stringify(`<p>${str}</p>`));
+    if (str) {      
+      this.tempHolder.push(str);
+      this._createdPValue.next(this.tempHolder);
+    }
+  }
+
+  scrollToBottom(ele: any): void {
+    try {
+      if (ele !== null)
+        ele.nativeElement.scrollTop = ele.nativeElement.scrollHeight;
+    } catch (err) { }
   }
 
   updateTyping(str: string) {
     if (!str) return;
+    this.messageRef?.nativeElement.scrollIntoView({behavior: 'smooth', offsetTop: -50});
+    this.cdr.detectChanges();
     let count = str.length;
     const interval = setInterval(() => {
-      this._typeThis.next(`
-      ${this.tempHolder}
-      <p class="blinker">${str.split('').reverse().slice(count).reverse().join('')}</p>
-      `);
+      this._typeThis.next(str.split('').reverse().slice(count).reverse().join(''));
       this.cdr.detectChanges();
       if (!count) {
         if (this.messaegIndex < this.messageArray.length) {
