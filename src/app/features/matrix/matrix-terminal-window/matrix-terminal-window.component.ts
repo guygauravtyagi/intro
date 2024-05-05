@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, Inject, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { FloatButtonComponent } from '../../../shared/components/float-button/float-button.component';
 
@@ -12,6 +12,7 @@ import { FloatButtonComponent } from '../../../shared/components/float-button/fl
   ],
   templateUrl: './matrix-terminal-window.component.html',
   styleUrl: './matrix-terminal-window.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
 export class MatrixTerminalWindowComponent {

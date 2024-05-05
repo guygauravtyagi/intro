@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'gt-matrix-background',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './matrix-background.component.html',
-  styleUrl: './matrix-background.component.scss'
+  styleUrl: './matrix-background.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatrixBackgroundComponent implements OnInit {
   
