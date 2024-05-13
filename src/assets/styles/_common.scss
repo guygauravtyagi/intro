@@ -1,3 +1,38 @@
 .z-index-1 {
     z-index: 2;
 }
+
+.slideLeft {
+    animation: slideinleft 1s ease-in-out;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.slideRight {
+    animation: slideinright 1s ease-in-out;
+}
+
+@keyframes slideinleft {
+    from {
+        transform: translateX(-20%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideinright {
+    from {
+        transform: translateX(20%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}

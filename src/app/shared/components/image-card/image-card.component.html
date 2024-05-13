@@ -1,0 +1,18 @@
+<div class="container">
+    <div (gtScrolledToView)="doSomething()" class="color-container">
+        <div class="left-container">
+            <div #leftSide class="holder">
+                <ng-content class="header" select="[header]">
+                    
+                </ng-content>
+            </div>
+        </div>
+        <div class="right-container">
+            <div #rightSide class="holder">
+                <ng-content class="body" select="[body]">
+        
+                </ng-content>
+            </div>
+        </div>
+    </div>
+</div>
