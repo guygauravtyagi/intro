@@ -1,14 +1,14 @@
-<div class="container">
-    <div (gtScrolledToView)="doSomething()" class="color-container">
+<div data-aos-easing="ease-out-back" class="container">
+    <div gtScrolledToView class="color-container">
         <div class="left-container">
-            <div #leftSide class="holder">
+            <div #leftSide data-aos="zoom-in-right" class="holder">
                 <ng-content class="header" select="[header]">
                     
                 </ng-content>
             </div>
         </div>
         <div class="right-container">
-            <div #rightSide class="holder">
+            <div #rightSide data-aos="zoom-in-left" class="holder">
                 <ng-content class="body" select="[body]">
         
                 </ng-content>

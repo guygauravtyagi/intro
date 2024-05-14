@@ -1,16 +1,17 @@
-import { AfterViewInit, Component, ElementRef, Inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, OnDestroy } from '@angular/core';
 import { MajorSectionComponent, TableSectionComponent } from '../../features/boring';
 import { CardData } from '../../shared/interfaces/boring-model';
 import { DOCUMENT } from '@angular/common';
+import { HeroBannerComponent } from '../../shared/components/hero-banner/hero-banner.component';
 
 @Component({
   selector: 'gt-boring-page',
   standalone: true,
-  imports: [MajorSectionComponent, TableSectionComponent],
+  imports: [MajorSectionComponent, TableSectionComponent, HeroBannerComponent],
   templateUrl: './boring-page.component.html',
   styleUrl: './boring-page.component.scss'
 })
-export class BoringPageComponent implements AfterViewInit {
+export class BoringPageComponent implements AfterViewInit, OnDestroy {
 
   cardData: CardData[] = [{
     heading: 'Altair',

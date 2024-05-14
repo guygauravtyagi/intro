@@ -1,11 +1,12 @@
-import { Component, ElementRef, HostBinding, HostListener, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ScrolledToViewDirective } from '../../directives/scrolled-to-view.directive';
+import { Component, ElementRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'gt-image-card',
   standalone: true,
-  imports: [CommonModule, ScrolledToViewDirective],
+  imports: [CommonModule],
   templateUrl: './image-card.component.html',
   styleUrl: './image-card.component.scss'
 })
@@ -14,9 +15,14 @@ export class ImageCardComponent {
   @ViewChild('leftSide') leftSide!: ElementRef;
   @ViewChild('rightSide') rightSide!: ElementRef;
 
-  doSomething() {
-    this.leftSide.nativeElement.classList.add('slideLeft');
-    this.rightSide.nativeElement.classList.add('slideRight');
-  }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
 
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({ duration: 1000 })
+      AOS.refresh();
+    }
+  }
 }
