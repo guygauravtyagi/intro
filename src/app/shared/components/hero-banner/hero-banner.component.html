@@ -1,14 +1,8 @@
-<div class="container">
-    <div class="image-holder">
+<div class="container" [ngStyle]="style">
+    <div class="background pulsate" [ngStyle]="{'background-image': bgImage}">
     </div>
     <div class="content-holder">
-        <div class="content">
-            <h1>
-                Gaurav Tyagi
-            </h1>
-            <h3>
-                Front-end and JS Developer
-            </h3>
-        </div>
+        <ng-content select="[header]"></ng-content>
+        <ng-content select="[body]"></ng-content>
     </div>
 </div>

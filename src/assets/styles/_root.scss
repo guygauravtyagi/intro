@@ -52,6 +52,21 @@ $size-7xl: 2.8rem;
 $size-8xl: 3rem;
 $size-9xl: 3.2rem;
 
+
+$len-xs: 64px;
+$len-s: 72px;
+$len-m: 80px;
+$len-l: 88px;
+$len-xl: 96px;
+$len-xxl: 104px;
+$len-3xl: 112px;
+$len-4xl: 120px;
+$len-5xl: 128px;
+$len-6xl: 136px;
+$len-7xl: 144px;
+$len-8xl: 152px;
+$len-9xl: 160px;
+
 $media_queries : ('small-mobile' : unquote("only screen and (max-width: 576px)"),
     'mobile' : unquote("only screen and (min-width: 577px) and (max-width: 768px)"),
     'tablet' : unquote("only screen and (min-width: 769px) and (max-width: 992px)"),

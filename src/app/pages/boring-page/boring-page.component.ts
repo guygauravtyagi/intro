@@ -3,11 +3,12 @@ import { MajorSectionComponent, TableSectionComponent } from '../../features/bor
 import { CardData } from '../../shared/interfaces/boring-model';
 import { DOCUMENT } from '@angular/common';
 import { HeroBannerComponent } from '../../shared/components/hero-banner/hero-banner.component';
+import { HeaderSectionComponent } from '../../features/boring/header-section/header-section.component';
 
 @Component({
   selector: 'gt-boring-page',
   standalone: true,
-  imports: [MajorSectionComponent, TableSectionComponent, HeroBannerComponent],
+  imports: [HeaderSectionComponent, MajorSectionComponent, TableSectionComponent],
   templateUrl: './boring-page.component.html',
   styleUrl: './boring-page.component.scss'
 })
@@ -33,11 +34,11 @@ export class BoringPageComponent implements AfterViewInit, OnDestroy {
   constructor(
     private elementRef: ElementRef,
     @Inject(DOCUMENT) private document: Document,
-  ) { 
+  ) {
     this.document.body.classList.add('font-family-g');
   }
-  
-  ngOnDestroy(): void {  
+
+  ngOnDestroy(): void {
     this.document.body.classList.remove('font-family-g');
   }
   ngAfterViewInit() {

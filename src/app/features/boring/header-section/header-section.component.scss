@@ -1,0 +1,52 @@
+@import './../../../../assets/styles/_root.scss';
+
+.content {
+    color: $white-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+
+    .image-holder {
+        height: $len-9xl;
+        width: $len-9xl;
+        border-radius: $len-5xl;
+        background-color: $magnolia;
+        background-size: cover;
+        background-position: 0 -2rem;
+        animation: something 10s infinite ease;
+    }
+    h1 {
+        letter-spacing: $size-3xs;
+        line-height: $size-6xl;
+        font-size: $size-7xl;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+    h3 {
+        letter-spacing: $size-5xs;
+        font-weight: normal;
+    }
+    @include for_breakpoint(small-mobile mobile tablet) {
+        h1 {
+            letter-spacing: $size-4xs;
+            font-size: $size-5xl;
+        }
+        h3 {
+            letter-spacing: $size-6xs;
+            font-weight: normal;
+        }
+    }
+}
+
+@keyframes something {
+    0%,
+    100% {
+        box-shadow: $bittersweet 0px 0px 0px 0px, $bittersweet-5 0px 5px 20px 0px inset;
+    }
+    50% {
+        box-shadow: $bittersweet 0px 0px 50px 5px, $bittersweet-5 0px 0px 0px 0px inset;
+    }
+}
