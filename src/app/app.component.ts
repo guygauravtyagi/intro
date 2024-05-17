@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { MatrixPageComponent } from './pages/matrix-page/matrix-page.component';
 
 @Component({
@@ -8,7 +7,7 @@ import { MatrixPageComponent } from './pages/matrix-page/matrix-page.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, MatrixPageComponent, NavBarComponent]
+    imports: [RouterOutlet, MatrixPageComponent]
 })
 export class AppComponent {
   title = 'intro';
