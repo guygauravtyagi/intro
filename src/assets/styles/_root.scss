@@ -1,18 +1,80 @@
-$primary-color: #ff9933;
-$primary-color-100: #ff8a14;
-$primary-color-200: #f57a00;
-$primary-color-300: #d66b00;
-$primary-color-400: #b85c00;
-$primary-color-500: #9c4c00;
-$primary-color-600: #7a3d00;
-$primary-color-700: #5c2e00;
-$primary-color-800: #3d1f00;
-$primary-color-900: #1f0f00;
-$white-color: #fff;
-$black-color: #000;
+$ultra-voilet: rgba(71, 76, 107);
+$ultra-voilet-9: rgba(71, 76, 107, 0.9);
+$ultra-voilet-7: rgba(71, 76, 107, 0.7);
+$ultra-voilet-5: rgba(71, 76, 107, 0.5);
+$ultra-voilet-3: rgba(71, 76, 107, 0.3);
 
-$media_queries : (
-    'small-mobile' : unquote("only screen and (max-width: 576px)"),
+$jade: rgb(87, 167, 115);
+$jade-9: rgba(87, 167, 115, 0.9);
+$jade-7: rgb(87, 167, 115, 0.7);
+$jade-5: rgb(87, 167, 115, 0.5);
+$jade-3: rgb(87, 167, 115, 0.3);
+
+$magnolia: rgb(239, 233, 244);
+$magnolia-9: rgb(239, 233, 244, 0.9);
+$magnolia-7: rgb(239, 233, 244, 0.7);
+$magnolia-5: rgb(239, 233, 244, 0.5);
+$magnolia-3: rgb(239, 233, 244, 0.3);
+
+$process-cyan: rgb(8, 178, 227);
+$process-cyan-9: rgb(8, 178, 227, 0.9);
+$process-cyan-7: rgb(8, 178, 227, 0.7);
+$process-cyan-5: rgb(8, 178, 227, 0.5);
+$process-cyan-3: rgb(8, 178, 227, 0.3);
+
+$bittersweet: rgb(238, 99, 82);
+$bittersweet-9: rgb(238, 99, 82, 0.9);
+$bittersweet-7: rgb(238, 99, 82, 0.7);
+$bittersweet-5: rgb(238, 99, 82, 0.5);
+$bittersweet-3: rgb(238, 99, 82, 0.3);
+
+$white-color: #fff;
+
+$black-color: rgb(0, 0, 0);
+$black-color-9: rgb(0, 0, 0, 0.9);
+$black-color-7: rgb(0, 0, 0, 0.7);
+$black-color-5: rgb(0, 0, 0, 0.5);
+$black-color-3: rgb(0, 0, 0, 0.3);
+$black-color-1: rgb(0, 0, 0, 0.1);
+
+$invisible-color: #00000000;
+
+
+$size-6xs: 0.05rem;
+$size-5xs: 0.1rem;
+$size-4xs: 0.2rem;
+$size-3xs: 0.4rem;
+$size-xxs: 0.6rem;
+$size-xs: 0.8rem;
+$size-s: 1rem;
+$size-m: 1.2rem;
+$size-l: 1.4rem;
+$size-xl: 1.6rem;
+$size-xxl: 1.8rem;
+$size-3xl: 2rem;
+$size-4xl: 2.2rem;
+$size-5xl: 2.4rem;
+$size-6xl: 2.6rem;
+$size-7xl: 2.8rem;
+$size-8xl: 3rem;
+$size-9xl: 3.2rem;
+
+
+$len-xs: 64px;
+$len-s: 72px;
+$len-m: 80px;
+$len-l: 88px;
+$len-xl: 96px;
+$len-xxl: 104px;
+$len-3xl: 112px;
+$len-4xl: 120px;
+$len-5xl: 128px;
+$len-6xl: 136px;
+$len-7xl: 144px;
+$len-8xl: 152px;
+$len-9xl: 160px;
+
+$media_queries : ('small-mobile' : unquote("only screen and (max-width: 576px)"),
     'mobile' : unquote("only screen and (min-width: 577px) and (max-width: 768px)"),
     'tablet' : unquote("only screen and (min-width: 769px) and (max-width: 992px)"),
     'desktop' : unquote("only screen and (min-width: 993px) and (max-width: 1200px)"),
@@ -42,13 +104,26 @@ $media_queries : (
     padding: 0;
     margin: 0;
     line-height: 1.5rem;
+    box-sizing: border-box;
 }
 
 html,
 body {
-    color: $white-color;
-    background: $black-color;
+    color: $ultra-voilet;
+    background: $white-color;
     height: 100vh;
     width: 100vw;
+}
+
+.overflow-hidden {
     overflow: hidden !important;
 }
+
+.height-100 {
+    height: 100%;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
