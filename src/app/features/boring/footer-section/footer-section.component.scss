@@ -8,6 +8,16 @@
     justify-content: center;
     align-items: center;
     padding: 2em;
+    .details,
+    .thank-notes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label {
+            text-align: center;
+        }
+    }
     .details{
         font-size: $size-s;
     }
