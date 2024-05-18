@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, Renderer2 } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { MatrixBackgroundComponent } from '../../features/matrix/matrix-background/matrix-background.component';
 import { MatrixTerminalWindowComponent } from '../../features/matrix/matrix-terminal-window/matrix-terminal-window.component';
 import { MatrixTitleIntroComponent } from '../../features/matrix/matrix-title-intro/matrix-title-intro.component';
@@ -17,9 +17,17 @@ import { MatrixTitleIntroComponent } from '../../features/matrix/matrix-title-in
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MatrixPageComponent {
+export class MatrixPageComponent implements OnDestroy {
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(
+    private cdr: ChangeDetectorRef,    
+    @Inject(DOCUMENT) private document: Document,
+  ) { 
+    this.document.body.classList.add('overflow-hidden'); 
+  }
+  ngOnDestroy(): void {  
+    this.document.body.classList.remove('overflow-hidden');
+  }
 
   protected drapesDown = false;
   protected interact = false;

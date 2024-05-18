@@ -1,0 +1,45 @@
+@import './../../../../assets/styles/_root.scss';
+
+.section {
+
+    background-color: $white-color;
+
+    div {
+        padding: 1em;
+    }
+
+    .heading {
+        text-align: center;
+        padding-bottom: 0;
+    }
+
+    h3 {
+        font-size: $size-xxl;
+        font-weight: normal;
+        letter-spacing: $size-4xs;
+        line-height: $size-5xl;
+    }
+
+    h4 {
+        font-size: $size-xl;
+        font-weight: normal;
+        letter-spacing: $size-5xs;
+        line-height: $size-xl;
+    }
+
+    h5,
+    p {
+        font-size: $size-s;
+        font-weight: normal;
+        letter-spacing: $size-6xs;
+    }
+
+    h5 {
+        line-height: $size-xxl;
+        padding-bottom: $size-xl;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+}

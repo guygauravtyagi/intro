@@ -1,0 +1,45 @@
+@import "./../../../../assets/styles/root";
+
+.container {
+    width: 100%;
+    padding: 3em;
+    .post-card {
+        min-height: 300px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $magnolia;
+        padding: 1em;
+        border-radius: $size-m;
+        box-shadow:
+            rgba(50, 50, 93, 0.5) 0px 30px 60px -20px,
+            rgba(0, 0, 0, 0.6) 0px 20px 40px -30px;
+        .left-side,
+        .right-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1em;
+            width: 50%;
+        }
+        .left-side {
+            border-right: 1px solid $ultra-voilet;
+        }
+    }
+    @include for_breakpoint(small-mobile mobile tablet) {
+        .post-card {
+            flex-direction: column;
+            .left-side,
+            .right-side {
+                width: 100%;
+            }
+            .left-side {
+                border: 0;
+                border-bottom: 1px solid $ultra-voilet;
+            }
+        }
+    }
+}

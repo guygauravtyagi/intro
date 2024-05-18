@@ -31,9 +31,13 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/fonts.scss"
+              "src/fonts.scss",
+              "node_modules/aos/dist/aos.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/aos/dist/aos.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -75,7 +79,7 @@
               "buildTarget": "intro:build:development"
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

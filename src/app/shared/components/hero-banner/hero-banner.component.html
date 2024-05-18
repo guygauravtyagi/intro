@@ -1,0 +1,8 @@
+<div class="container" [ngStyle]="style">
+    <div class="background pulsate" [ngStyle]="{'background-image': bgImage}">
+    </div>
+    <div class="content-holder">
+        <ng-content select="[header]"></ng-content>
+        <ng-content select="[body]"></ng-content>
+    </div>
+</div>

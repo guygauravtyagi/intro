@@ -1,0 +1,12 @@
+<gt-hero-banner>
+    <div class="content" body>
+        <div *ngIf="profilePic" class="image-holder" [ngStyle]="{'background-image': bgProfilePic}">
+        </div>
+        <h1 *ngIf="heading">
+            {{heading}}
+        </h1>
+        <h3 *ngIf="subHeading">
+            {{subHeading}}
+        </h3>
+    </div>
+</gt-hero-banner>

@@ -1,0 +1,25 @@
+@import './../../../../assets/styles/root';
+
+.container {
+    h3 {
+        line-height: $size-5xl;
+        font-size: $size-l;
+        font-weight: normal;
+    }
+    .tags-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        gt-tags {
+            margin: .5em;
+        }
+        @include for_breakpoint(small-mobile) {            
+            gt-tags {
+                margin: .25em;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,58 @@
+@import './../../../../assets/styles/_root.scss';
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    font-size: 16px;
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        background-position: 0 -25rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+        @include for_breakpoint(small-mobile mobile) {
+            background-position: right top;
+        }
+        @include for_breakpoint(tablet) {
+            background-position: 0 -5rem;
+        }
+        @include for_breakpoint(desktop big-screen) {
+            background-position: 0 -10rem;
+        } 
+        @include for_breakpoint(desktop big-screen) {
+            background-position: 0 -10rem;
+        }     
+    }
+    .content-holder {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        translate: all .2s ease-in;
+    }
+}
+
+
+.pulsate {
+    animation: pulsating 10s infinite ease;
+}
+
+@keyframes pulsating {
+    0%,
+    100% {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+
+    50% {
+        background-color: $bittersweet-5;
+    }
+}

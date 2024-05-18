@@ -1,0 +1,19 @@
+@import './../../../../assets/styles/_root.scss';
+
+.tag-container {
+    background-color: $bittersweet-9;
+    color: $ultra-voilet;
+    padding: .5em;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+    .tag-icon {
+
+    }
+    .tag-name {
+        font-size: $size-xs;
+        text-transform: uppercase;
+    }
+}
