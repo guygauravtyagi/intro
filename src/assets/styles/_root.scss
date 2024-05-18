@@ -117,6 +117,10 @@ body {
     width: 100vw;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .overflow-hidden {
     overflow: hidden !important;
 }

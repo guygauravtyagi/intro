@@ -42,4 +42,11 @@
     ul {
         list-style-type: none;
     }
+
+    @include for_breakpoint(xs-mobile small-mobile mobile) {
+        h5 {
+            line-height: $size-l;
+            padding-bottom: $size-xs;
+        }
+    }
 }
