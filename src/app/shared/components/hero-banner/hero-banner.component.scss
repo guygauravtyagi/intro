@@ -16,7 +16,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
-        @include for_breakpoint(small-mobile mobile) {
+        @include for_breakpoint(xs-mobile small-mobile mobile) {
             background-position: right top;
         }
         @include for_breakpoint(tablet) {

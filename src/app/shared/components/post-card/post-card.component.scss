@@ -29,7 +29,8 @@
             border-right: 1px solid $ultra-voilet;
         }
     }
-    @include for_breakpoint(small-mobile mobile tablet) {
+    @include for_breakpoint(xs-mobile small-mobile mobile tablet) {
+        padding: .5em;
         .post-card {
             flex-direction: column;
             .left-side,
