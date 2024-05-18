@@ -104,12 +104,13 @@ $media_queries : ('small-mobile' : unquote("only screen and (max-width: 576px)")
     padding: 0;
     margin: 0;
     line-height: 1.5rem;
+    box-sizing: border-box;
 }
 
 html,
 body {
     color: $ultra-voilet;
-    background: $magnolia;
+    background: $white-color;
     height: 100vh;
     width: 100vw;
 }

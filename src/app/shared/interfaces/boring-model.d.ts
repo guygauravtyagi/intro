@@ -17,3 +17,12 @@ export interface Styles extends StringKey{
   height?: string;
   width?: string;
 }
+
+export interface TagDetails {
+  name?: string;
+  iconName?: string;
+  height?: string;
+  width?: string;
+  iconHeight?: string;
+  iconWidth?: string;  
+}

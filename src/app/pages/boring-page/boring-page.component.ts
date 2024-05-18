@@ -1,14 +1,15 @@
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy } from '@angular/core';
 import { MajorSectionComponent, TableSectionComponent } from '../../features/boring';
-import { CardData } from '../../shared/interfaces/boring-model';
+import { CardData, TagDetails } from '../../shared/interfaces/boring-model';
 import { DOCUMENT } from '@angular/common';
-import { HeroBannerComponent } from '../../shared/components/hero-banner/hero-banner.component';
 import { HeaderSectionComponent } from '../../features/boring/header-section/header-section.component';
+import { AboutSectionComponent } from '../../features/boring/about-section/about-section.component';
+import { DataStripComponent } from '../../shared/components/data-strip/data-strip.component';
 
 @Component({
   selector: 'gt-boring-page',
   standalone: true,
-  imports: [HeaderSectionComponent, MajorSectionComponent, TableSectionComponent],
+  imports: [HeaderSectionComponent, DataStripComponent, AboutSectionComponent, MajorSectionComponent, TableSectionComponent],
   templateUrl: './boring-page.component.html',
   styleUrl: './boring-page.component.scss'
 })

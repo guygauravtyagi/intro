@@ -1,16 +1,20 @@
 <div>
     <gt-header-section
-    [profilePic]="'https://media.licdn.com/dms/image/D4D03AQELAcnssvJJHQ/profile-displayphoto-shrink_800_800/0/1685077287255?e=1721260800&v=beta&t=1UEVkF7Ml9ykw3weZIk3WnLG4qxlhi3NZGdIWWIMBK4'"
+    [profilePic]="'assets/images/profile_pic.jpeg'"
     [heading]="'Gaurav Tyagi'"
     [subHeading]="'JS and Front end Developer'"
     ></gt-header-section>
 </div>
-<div>
+<gt-data-strip></gt-data-strip>
+<div class="content-div">
+    <gt-about-section></gt-about-section>
+</div>
+<div class="content-div">
     <gt-major-section [cardData]="cardData" [sectionTitle]="'Work Experience'"></gt-major-section>
 </div>
-<div>
+<div class="content-div">
     <gt-major-section [cardData]="cardData" [sectionTitle]="'Projects'"></gt-major-section>
 </div>
-<div>
+<div class="content-div">
     <gt-major-section [cardData]="cardData" [sectionTitle]="'Education'"></gt-major-section>
 </div>

@@ -1,3 +1,22 @@
+@import './../../../assets/styles/root';
+
 * {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content-div {
+    padding: .5em 12em 2em 12em;
+}
+
+
+@include for_breakpoint(small-mobile mobile tablet desktop) {
+    .content-div {
+        padding: .5em 2em 2em 2em;
+    }
+}
+
+@include for_breakpoint(big-screen) {
+    .content-div {
+        padding: .5em 6em 2em 6em;
+    }
 }
