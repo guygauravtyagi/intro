@@ -50,14 +50,18 @@
             background-color: $magnolia;
             width: 70%;
         }
+    }
 
-        @include for_breakpoint(small-mobile mobile tablet) {
+    @include for_breakpoint(xs-mobile small-mobile mobile tablet) {
+        padding: 2em .5em;
+        .color-container {
             flex-direction: column;
-
+            box-shadow: rgba(0, 0, 0, 0.15) 0 0 0;
             .left-container,
             .right-container {
                 width: 100%;
             }
+
         }
     }
 }

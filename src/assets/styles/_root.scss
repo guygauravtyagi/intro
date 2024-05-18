@@ -74,7 +74,9 @@ $len-7xl: 144px;
 $len-8xl: 152px;
 $len-9xl: 160px;
 
-$media_queries : ('small-mobile' : unquote("only screen and (max-width: 576px)"),
+$media_queries : (
+    'xs-mobile' : unquote("only screen and (max-width: 375px)"),
+    'small-mobile' : unquote("only screen and (min-width: 376px) and (max-width: 576px)"),
     'mobile' : unquote("only screen and (min-width: 577px) and (max-width: 768px)"),
     'tablet' : unquote("only screen and (min-width: 769px) and (max-width: 992px)"),
     'desktop' : unquote("only screen and (min-width: 993px) and (max-width: 1200px)"),

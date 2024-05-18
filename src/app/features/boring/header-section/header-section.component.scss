@@ -31,7 +31,7 @@
         letter-spacing: $size-5xs;
         font-weight: normal;
     }
-    @include for_breakpoint(small-mobile mobile tablet) {
+    @include for_breakpoint(xs-mobile small-mobile mobile tablet) {
         h1 {
             letter-spacing: $size-4xs;
             font-size: $size-5xl;
