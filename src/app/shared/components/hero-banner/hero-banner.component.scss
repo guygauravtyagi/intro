@@ -12,15 +12,21 @@
         height: 100%;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.75);
-        background-position: 0 -20rem;
+        background-position: 0 -25rem;
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
-        @include for_breakpoint(small-mobile mobile tablet) {
+        @include for_breakpoint(small-mobile mobile) {
             background-position: right top;
         }
-        @include for_breakpoint(desktop big-screen) {
+        @include for_breakpoint(tablet) {
             background-position: 0 -5rem;
+        }
+        @include for_breakpoint(desktop big-screen) {
+            background-position: 0 -10rem;
+        } 
+        @include for_breakpoint(desktop big-screen) {
+            background-position: 0 -10rem;
         }     
     }
     .content-holder {

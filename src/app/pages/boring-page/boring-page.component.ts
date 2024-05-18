@@ -5,11 +5,12 @@ import { DOCUMENT } from '@angular/common';
 import { HeaderSectionComponent } from '../../features/boring/header-section/header-section.component';
 import { AboutSectionComponent } from '../../features/boring/about-section/about-section.component';
 import { DataStripComponent } from '../../shared/components/data-strip/data-strip.component';
+import { FooterSectionComponent } from '../../features/boring/footer-section/footer-section.component';
 
 @Component({
   selector: 'gt-boring-page',
   standalone: true,
-  imports: [HeaderSectionComponent, DataStripComponent, AboutSectionComponent, MajorSectionComponent, TableSectionComponent],
+  imports: [HeaderSectionComponent, DataStripComponent, AboutSectionComponent, MajorSectionComponent, TableSectionComponent, FooterSectionComponent],
   templateUrl: './boring-page.component.html',
   styleUrl: './boring-page.component.scss'
 })

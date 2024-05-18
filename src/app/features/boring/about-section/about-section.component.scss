@@ -1,6 +1,11 @@
 @import './../../../../assets/styles/root';
 
 .container {
+    h3 {
+        line-height: $size-5xl;
+        font-size: $size-l;
+        font-weight: normal;
+    }
     .tags-section {
         display: flex;
         flex-direction: row;
