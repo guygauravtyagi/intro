@@ -59,7 +59,7 @@ export class BoringPageComponent implements AfterViewInit, OnDestroy {
     }
   }, {
     heading: 'Century Link',
-    subHeading: 'March 2016 - March 2018',
+    subHeading: 'November 2016 - January 2022',
     body: {
       heading: 'Sr. Software Developer',
       subHeading: 'Projects: HealthCheck Tool, Parity Tool and ESHOP',
@@ -71,8 +71,8 @@ export class BoringPageComponent implements AfterViewInit, OnDestroy {
       ]
     }
   }, {
-    heading: 'Century Link',
-    subHeading: 'March 2016 - March 2018',
+    heading: 'Born Group',
+    subHeading: 'January 2022 - Current',
     body: {
       heading: 'Sr. Software Developer',
       subHeading: 'Projects: Mutiple e-Commerece and Banking web app',
