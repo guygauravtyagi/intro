@@ -75,6 +75,15 @@
                         animation: blink 200ms linear infinite;
                     }
                 }
+
+                &:nth-last-child(2) {
+                    &:after {
+                        content: " _";
+                        font-weight: bold;
+                        color: #FFFFFF;
+                        animation: blink 200ms linear infinite;
+                    }
+                }
             }
         }
 

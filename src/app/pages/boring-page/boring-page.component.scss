@@ -8,6 +8,10 @@
     padding: .5em 12em 2em 12em;
 }
 
+div{
+    overflow-x: hidden;
+}
+
 
 @include for_breakpoint(small-mobile mobile tablet desktop) {
     .content-div {
