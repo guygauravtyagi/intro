@@ -1,4 +1,4 @@
-<div class=" conatiner-abs container">
+<div class="conatiner-abs container">
     <ng-container>
         <div class="terminal" *ngIf="showDialogBox">
             <nav class="terminal-nav">
@@ -13,7 +13,7 @@
             </nav>
             <section id="scroller">
                 <div>
-                    <ng-container *ngIf="createdPValue$ | async as pValue">
+                    <ng-container *ngIf="message$ | async as pValue">
                         <p *ngFor="let item of pValue">{{item}}</p>
                     </ng-container>
                     <ng-container *ngIf="typeThis$ | async as typeThis">
@@ -26,7 +26,7 @@
     </ng-container>
 </div>
 
-<gt-float-button *ngIf="messaegIndex === messageArray.length - 1">
+<gt-float-button>
     <a download="Gaurav_Tyagi_UI" target="_blank" href="../../../../assets/downloads/Gaurav_Tyagi_UI.pdf">
         <img src="/assets/images/rabbit.gif" alt="My cool gif">
     </a>

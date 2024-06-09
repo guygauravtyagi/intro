@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: visible;
+    .holder {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        min-width: 100%;
+        min-height: 100%;
+        overflow-x: visible;
+        div {
+            min-width: 100%;
+            min-height: 100%;
+            background-color: aqua;
+            &:nth-child(even) {
+                background-color: bisque;
+            }
+        }
+    }
+}
