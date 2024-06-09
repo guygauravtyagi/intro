@@ -1,15 +1,13 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #00000025;
     z-index: 1;
     overflow: hidden;
-
+    display: grid;
 
     .terminal {
-        height: 60vh;
-        width: 60vw;
+        height: 60%;
+        width: 60%;
+        margin: auto;
         border: 3px ridge gray;
         background-color: black;
         overflow: hidden;
