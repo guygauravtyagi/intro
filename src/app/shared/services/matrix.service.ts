@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
+import { ChangeDetectorRef, Inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { BehaviorSubject, Subject, take, tap } from 'rxjs';
 
 @Injectable({
@@ -37,37 +37,48 @@ export class MatrixService {
   private _writeLine = new BehaviorSubject<string>('');
   public writeLine$ = this._writeLine.asObservable();
 
-  private isBrowser = signal(false);
+  public isBrowser = signal(false);
+  private wasClosed = signal(false);
 
-  constructor(@Inject(PLATFORM_ID) platformId: object) {
+  constructor(@Inject(PLATFORM_ID) platformId: object,
+    private cdr: ChangeDetectorRef) {
     this.isBrowser.set(isPlatformBrowser(platformId));
   }
 
-  addNextLine(isCloseTried?: boolean) {
+  addNextLine() {
     if (this.currentIndex > this.messageArray.length) return;
-    if (isCloseTried) {
+    if (this.wasClosed()) {
       this._message.next([...this._message.value, this.onClose[Math.random() * 5]]);
+      this.cdr.detectChanges();
+      this.wasClosed.set(false);
     } else {
       this.currentIndex++;
       this._message.next([...this._message.value, this.messageArray[this.currentIndex - 1]]);
+      this.cdr.detectChanges();
     }
   }
 
   writeMessage() {
-    if(this.currentIndex >= this.messageArray.length) return;
+    if (this.currentIndex >= this.messageArray.length) return;
     const str = this.messageArray[this.currentIndex];
     let count = str.length;
     if (this.isBrowser()) {
       const interval = setInterval(() => {
         this._writeLine.next(str.split('').reverse().slice(count).reverse().join(''));
+        this.cdr.detectChanges();
         if (!count) {
-          this.addNextLine(false);
+          this.addNextLine();
           this._writeLine.next('');
+          this.cdr.detectChanges();
           clearInterval(interval);
         };
         count--;
       }, 100);
     }
+  }
+
+  closeClicked() {
+    this.wasClosed.set(true);
   }
 
 }

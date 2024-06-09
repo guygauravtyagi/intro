@@ -15,9 +15,9 @@ export class MatrixBackgroundComponent implements OnInit {
     innerArr: string;
     delay: string;
   }[] = [];
-  @Input() columns: number = 100;
+  @Input() columns: number = 60;
   @Input() rows: number = 60;
-  @Input() animationDelay: number = 20;
+  @Input() animationDelay: number = 15;
   @Input() charArr: string = 'ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ日ｦｲｸｺｿﾁﾄﾉﾌﾔﾖﾙﾚﾛﾝ012345789:・."=*+-<>';
   iteration: string = '';  
   ngOnInit(): void {

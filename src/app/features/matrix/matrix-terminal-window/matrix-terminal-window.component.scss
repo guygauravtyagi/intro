@@ -6,6 +6,7 @@
     z-index: 1;
     overflow: hidden;
 
+
     .terminal {
         height: 60vh;
         width: 60vw;
@@ -36,13 +37,25 @@
                     border: 2px outset #ff9f9f;
                     outline: none;
                     font-weight: 600;
-                    font-size: 20px;
-                    color: #5a1717;
+                    font-size: 18px;
+                    color: #2c0707;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     &:active {
                         border: 2px inset #ff9f9f;
+                        color: #d4bdbd;
                     }
                 }
+
+                &:active {
+                    background-color: rgb(77, 0, 0);
+                }
+            }
+            
+            label {
+                color: #FFF;
             }
         }
     }

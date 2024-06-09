@@ -22,32 +22,21 @@ import { MatrixService } from '../../../shared/services/matrix.service';
 export class MatrixTerminalWindowComponent {
 
   message$ = this.matrixService.message$.pipe(tap(() => {
-    this.messageRef?.nativeElement.scrollIntoView({behavior: 'smooth', offsetTop: -50});
+    this.messageRef?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', offsetTop: -50 });
   }));
   protected typeThis$ = this.matrixService.writeLine$;
 
-  messaegIndex = 0;
   @ViewChild('message', { static: false }) messageRef: ElementRef | undefined;
-  private tempHolder: string[] = [];
 
   @Input() showDialogBox = true;
   private _createdPValue = new BehaviorSubject<string[]>([]);
   protected createdPValue$ = this._createdPValue.asObservable();
 
   constructor(
-    private matrixService: MatrixService
+    private matrixService: MatrixService,
   ) { }
 
-  ngOnInit(): void {
-    this.tempHolder.length = 0;
-  }
-
-  close() { }
-
-  scrollToBottom(ele: any): void {
-    try {
-      if (ele !== null)
-        ele.nativeElement.scrollTop = ele.nativeElement.scrollHeight;
-    } catch (err) { }
+  close() {
+    //you can't close the window for now..
   }
 }
