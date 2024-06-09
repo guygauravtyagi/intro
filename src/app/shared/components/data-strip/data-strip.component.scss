@@ -22,7 +22,7 @@
     &:hover {
         color: $black-color;
     }
-    @include for_breakpoint(small-mobile mobile) {
+    @include for_breakpoint(xs-mobile small-mobile mobile) {
         label {
             display: none;
         }

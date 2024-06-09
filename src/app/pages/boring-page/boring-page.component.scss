@@ -5,15 +5,16 @@
 }
 
 .content-div {
-    padding: .5em 12em 2em 12em;
+    padding: .5em 12em 3em 12em;
 }
 
-div{
-    overflow-x: hidden;
+@include for_breakpoint(xs-mobile small-mobile) {
+    .content-div {
+        padding: .5em .5em 3em .5em;
+    }
 }
 
-
-@include for_breakpoint(small-mobile mobile tablet desktop) {
+@include for_breakpoint(mobile tablet desktop) {
     .content-div {
         padding: .5em 2em 2em 2em;
     }
