@@ -1,6 +1,6 @@
 {
   "name": "intro",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -24,7 +24,6 @@
     "@fortawesome/angular-fontawesome": "^0.15.0",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@nguniversal/express-engine": "^16.2.0",
     "aos": "^2.3.4",
     "express": "^4.19.2",
     "jquery": "^3.7.1",
