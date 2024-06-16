@@ -36,3 +36,23 @@
         opacity: 1;
     }
 }
+
+.move {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    opacity: .75;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: .3rem;
+        color: #0000b1;
+    }
+}

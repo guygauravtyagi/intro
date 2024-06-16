@@ -16,18 +16,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: multiply;
-        @include for_breakpoint(xs-mobile small-mobile mobile) {
-            background-position: right top;
-        }
-        @include for_breakpoint(tablet) {
-            background-position: 0 -5rem;
-        }
-        @include for_breakpoint(desktop big-screen) {
-            background-position: 0 -10rem;
-        } 
-        @include for_breakpoint(desktop big-screen) {
-            background-position: 0 -10rem;
-        }     
+        background-position: center;   
     }
     .content-holder {
         position: absolute;

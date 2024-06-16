@@ -1,0 +1,12 @@
+.container {
+    --x: 0px;
+    --y: 0px;
+    --invert: 0%;
+    background-image: url(./../../../assets/images/lotr-bg.jpg);
+    background-size: 127.5%;
+    background-position: var(--x) var(--y);
+    width: 100%;
+    height: 127.5%;
+    filter: invert(var(--invert));
+    transition: all 1s ease-out;
+}
