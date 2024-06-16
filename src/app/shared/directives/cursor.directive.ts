@@ -14,10 +14,11 @@ export class CursorDirective {
     const interacting = !!(event.target as any)?.closest('.interactable');
     const elementName = (event.target as any)?.closest('.interactable')?.dataset.name;
     const elementColor = (event.target as any)?.closest('.interactable')?.dataset.color;
-    this.child.innerHTML = `<p>${elementName}</p>`;
+    this.child.innerHTML = `<p>${elementName ? elementName : ''}</p>`;
     if(elementColor) this.child.style.backgroundColor = elementColor;
+    else this.child.style.backgroundColor = 'white';
     this.child.animate({
-      transform: `translate(${event.clientX - this.child.offsetHeight / 2}px, ${event.clientY - this.child.offsetWidth / 2}px) scale(${interacting ? 4 : 1})`
+      transform: `translate(${event.pageX - this.child.offsetHeight / 2}px, ${event.pageY - this.child.offsetWidth / 2}px) scale(${interacting ? 4 : 1})`
     }, {
       duration: 400,
       fill: 'forwards'

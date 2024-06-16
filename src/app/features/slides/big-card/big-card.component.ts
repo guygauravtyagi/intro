@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'gt-cards',
+  selector: 'gt-big-card',
   standalone: true,
   imports: [],
-  templateUrl: './cards.component.html',
-  styleUrl: './cards.component.scss'
+  templateUrl: './big-card.component.html',
+  styleUrl: './big-card.component.scss'
 })
-export class CardsComponent {
+export class BigCardComponent {
   @Input() name = '';
   @Input() backgroundImage?: string;
 }
