@@ -1,7 +1,9 @@
 <div class="container">
-    <div class="image-holder" [style]="'background-image: url('+backgroundImage+');'">
-        <div class="content-holder">
-            <h1>{{name}}</h1>
+    <a [routerLink]="href">
+        <div class="image-holder" [style]="'background-image: url('+backgroundImage+');'">
+            <div class="content-holder">
+                <h1>{{name}}</h1>
+            </div>
         </div>
-    </div>
+    </a>
 </div>
