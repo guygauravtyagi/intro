@@ -1,0 +1,46 @@
+<!-- Tambola Page -->
+<div class="tambola-page">
+    <h1>Tambola Game</h1>
+    @if (gameStarted) {
+    <button class="btn-danger" type="button" (click)="openRestartConfirmation()" [disabled]="!gameStarted">Restart
+        Game</button>
+    <div class="tambola-board">
+        @for (item of numbers; track $index) {
+        <div class="tambola-number" [class.called]="calledNumbers.includes(item.id)">
+            {{ item.id }}
+        </div>
+        }
+    </div>
+    <div class="btn-controls">
+        <button type="button" (click)="callNumber($event)" [disabled]="!gameStarted || numberLoading">Call
+            Number</button>
+    </div>
+    <div style="text-align: center;">
+        <p>Called Number: <br />
+            @for (item of calledNumbers; track $index) {
+            <span> {{ item }} ,</span>
+            }
+        </p>
+    </div>
+    } @else {
+    <div>
+        <button class="btn-primary" (click)="startGame()">Start Game</button>
+    </div>
+    }
+</div>
+
+<div class="overlay" [style.display]="restartConfirmationVisible ? 'block' : 'none'">
+    <div class="confirmation-dialog">
+        <h3>Are you sure you want to end the game?</h3>
+        <div class="confirmation-buttons">
+            <button class="btn-danger" (click)="restartGame()">Yes</button>
+            <button class="btn-primary" (click)="closeConfirmation()">No</button>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" [style.display]="popupNumberFlag ? 'flex' : 'none'">
+    <div class="number-popup">
+        <h2>{{ calledNumbers[calledNumbers.length - 1] }}</h2>
+    </div>
+</div>
